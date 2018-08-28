@@ -1,0 +1,35 @@
+body{
+  margin: 0;
+  padding: 0;
+  font-family: verdana;
+}
+#fullPage{
+  height: 100vh;
+  overflow: hidden;
+}
+#fullpage section{
+  height: 100vh;
+}
+#fullpage section h1{
+  margin: 0;
+  padding: 0;
+  text-align: center;
+  line-height: 100vh;
+  font-size: 10em;
+  text-transform: uppercase;
+}
+#fullpage section:nth-child(1){
+  background: #f00;
+}
+#fullpage section:nth-child(2){
+  background: #ff0;
+}
+#fullpage section:nth-child(3){
+  background: #0ff;
+}
+#fullpage section:nth-child(4){
+  background: #f0f;
+}
+#fullpage section:nth-child(5){
+  background: #0f0;
+}
