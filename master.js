@@ -29,23 +29,29 @@ app.post('/login', function(req, resp){
     resp.redirect('/redirects');
   }
 
-  if (req.body.username == 'admin' && req.body.password == 'admin') {
+//  if (req.body.username == 'admin' && req.body.password == 'admin') {
     session.uniqueID = req.body.username;
-  }
+//  }
   resp.redirect('/redirects')
 });
 
 app.get('/logout', function(req, resp){
   req.session.destroy();
+  resp.redirect("/login")
 });
+
+app.get('/admin', function(req, resp){
+  resp.sendFile(__dirname + '/index.html');
+})
+
 
 app.get('/redirects', function(req, resp){
   session = req.session;
-  if (session.uniqueID) {
+  if (session.uniqueID == 'admin') {
     console.log(session.uniqueID);
-    resp.redirect('/redirect')
+    resp.redirect('/admin');
   }else {
-    resp.end('who are you?? <a href="/logout">KILL SESSION</a>');
+    resp.send(req.session.uniqueID + ' not found <a href="/logout">KILL SESSION</a>');
   }
 })
 
