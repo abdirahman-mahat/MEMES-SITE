@@ -1,11 +1,14 @@
+var http = require('http');
 var express = require('express');
 var bodyParser = require('body-parser');
 var sessions = require('express-session');
+var path = require('path');
 
 var session;
 
 var app = express();
 
+app.use(express.static(path.join(__dirname, 'public')));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended:true}));
 app.use(sessions({
@@ -53,7 +56,7 @@ app.get('/redirects', function(req, resp){
   }else {
     resp.send(req.session.uniqueID + ' not found <a href="/logout">KILL SESSION</a>');
   }
-})
+}).listen(8080);
 
 app.listen(1337, function(){
   console.log('Listening at Port 1337');
