@@ -1,0 +1,38 @@
+{
+  "particles":{
+    "number":{
+      "value": 400
+    },
+    "opacity":{
+      "value": 0.7,
+      "random": true,
+      "anim":{
+        "enable": true
+      }
+    },
+    "size":{
+      "value":6
+    },
+    "move":{
+      "direction":"top"
+    }
+  },
+  "interactivity":{
+    "events":{
+      "onhover":{
+        "enable":true,
+        "mode":"repulse"
+      },
+      "onclick":{
+        "enable": true,
+        "mode":"push"
+      }
+    },
+    "modes":{
+      "repulse":{
+        "distance":70,
+        "duration":0.4
+      }
+    }
+  }
+}
