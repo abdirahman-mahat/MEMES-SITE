@@ -1,6 +1,13 @@
 
 body {
     padding-top: 50px; /* Padding for .navbar-fixed-top. Change value if navbar height changes. Remove if using .navbar-static-top. */
+    background-image: url("../../memes-site/images/ee.jpg");
+   background-repeat: no-repeat;
+   height: 800px;
+   width: 2000px;
+   background-position: center;
+   background-repeat: no-repeat;
+   background-size: cover;
 }
 
 h1, h2, h3, h4, h5, h6,
@@ -26,6 +33,8 @@ h1 a:link, h2 a:link, h3 a:link, h4 a:link, h5 a:link, h6 a:link {
     margin-top: 20px;
     background-color: #eee;
     color: black;
+    background-color: gray;
+    color: white;
 }
 
 .footer-blurb-item {
@@ -237,3 +246,14 @@ form.search {
          width: 100%;
       }
   }
+
+.btn {
+    background-color: #4CAF50; /* Green */
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+}
