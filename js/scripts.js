@@ -1,12 +1,4 @@
-/*!
- * IE10 viewport hack for Surface/desktop Windows 8 bug
- * Copyright 2014-2015 Twitter, Inc.
- * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
- */
 
-<<<<<<< HEAD
-// See the Getting Started docs for more information:
-// http://getbootstrap.com/getting-started/#support-ie10-width
 
 (function () {
   'use strict';
@@ -22,25 +14,38 @@
   }
 
 })();
-=======
-function showSlides() {
-    var i;
-    var slides = document.getElementsByClassName("mySlides");
-    var dots = document.getElementsByClassName("dot");
-    for (i = 0; i < slides.length; i++) {
-       slides[i].style.display = "none";
-    }
-    slideIndex++;
-    if (slideIndex > slides.length) {slideIndex = 1}
-    for (i = 0; i < dots.length; i++) {
-        dots[i].className = dots[i].className.replace(" active", "");
-    }
-    slides[slideIndex-1].style.display = "block";
-    dots[slideIndex-1].className += " active";
-    setTimeout(showSlides, 5000);
+unction scroll_to(clicked_link, nav_height) {
+	var element_class = clicked_link.attr('href').replace('#', '.');
+	var scroll_to = 0;
+	if(element_class != '.top-content') {
+		element_class += '-container';
+		scroll_to = $(element_class).offset().top - nav_height;
+	}
+	if($(window).scrollTop() != scroll_to) {
+		$('html, body').stop().animate({scrollTop: scroll_to}, 1000);
+	}
 }
 
 
-$('#fullpage').fullpage();
-FastClick.attach(document.body);r
->>>>>>> 0e67e78cba3d57ef580d0dcbf0aedf61a7cec5b1
+jQuery(document).ready(function() {
+
+	/*
+	    Scroll link
+	*/
+	$('a.scroll-link').on('click', function(e) {
+		e.preventDefault();
+		scroll_to($(this), 0);
+	});
+
+    /*
+        Background slideshow
+    */
+    $('.top-content').backstretch("assets/img/backgrounds/1.jpg");
+    $('.section-4-container').backstretch("assets/img/backgrounds/1.jpg");
+
+    /*
+        Wow
+    */
+    new WOW().init();
+
+});
