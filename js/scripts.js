@@ -49,3 +49,7 @@ jQuery(document).ready(function() {
     new WOW().init();
 
 });
+
+function myFunction(x) {
+    x.classList.toggle("change");
+}
