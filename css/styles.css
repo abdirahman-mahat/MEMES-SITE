@@ -308,3 +308,44 @@ a:hover {
     -webkit-transform: rotate(45deg) translate(-8px, -8px);
     transform: rotate(45deg) translate(-8px, -8px);
 }
+.plot {
+  max-width: 1200px;
+  margin:auto;
+  overflow:auto;
+}
+.Hot {
+  margin: 5px;
+  border: 1px solid #ccc;
+  float: left;;
+  width: 390px;
+  box-sizing: border-box;
+}
+.Hot img{
+  width:100%;
+  height:auto;
+  transition: 1s;
+}
+.Fresh {
+  margin: 5px;
+  border: 1px solid #ccc;
+  float: left;;
+  width: 390px;
+  box-sizing: border-box;
+}
+.Fresh img{
+  width:100%;
+  height:auto;
+  transition: 1s;
+}
+.Trending {
+  margin: 5px;
+  border: 1px solid #ccc;
+  float: left;;
+  width: 390px;
+  box-sizing: border-box;
+}
+.Trending img{
+  width:100%;
+  height:auto;
+  transition: 1s;
+}
