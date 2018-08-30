@@ -1,12 +1,4 @@
-/*!
- * IE10 viewport hack for Surface/desktop Windows 8 bug
- * Copyright 2014-2015 Twitter, Inc.
- * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
- */
 
-
-// See the Getting Started docs for more information:
-// http://getbootstrap.com/getting-started/#support-ie10-width
 
 (function () {
   'use strict';
@@ -22,13 +14,42 @@
   }
 
 })();
+unction scroll_to(clicked_link, nav_height) {
+	var element_class = clicked_link.attr('href').replace('#', '.');
+	var scroll_to = 0;
+	if(element_class != '.top-content') {
+		element_class += '-container';
+		scroll_to = $(element_class).offset().top - nav_height;
+	}
+	if($(window).scrollTop() != scroll_to) {
+		$('html, body').stop().animate({scrollTop: scroll_to}, 1000);
+	}
+}
 
-// Get the modal
-var modal = document.getElementById('id01');
 
-// When the user clicks anywhere outside of the modal, close it
-window.onclick = function(event) {
-    if (event.target == modal) {
-        modal.style.display = "none";
-    }
+jQuery(document).ready(function() {
+
+	/*
+	    Scroll link
+	*/
+	$('a.scroll-link').on('click', function(e) {
+		e.preventDefault();
+		scroll_to($(this), 0);
+	});
+
+    /*
+        Background slideshow
+    */
+    $('.top-content').backstretch("assets/img/backgrounds/1.jpg");
+    $('.section-4-container').backstretch("assets/img/backgrounds/1.jpg");
+
+    /*
+        Wow
+    */
+    new WOW().init();
+
+});
+
+function myFunction(x) {
+    x.classList.toggle("change");
 }
